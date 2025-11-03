@@ -6,8 +6,8 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 
 const deployedContracts = {
   11155111: {
-    FHECounter: {
-      address: "0xead137D42d2E6A6a30166EaEf97deBA1C3D1954e",
+    FHEBandChoice: {
+      address: "0xCdf1cAf2B63e22b597e126fE7CdBdF00a18928a0",
       abi: [
         {
           inputs: [
@@ -22,19 +22,25 @@ const deployedContracts = {
               type: "bytes",
             },
           ],
-          name: "decrement",
+          name: "changeChoice",
           outputs: [],
           stateMutability: "nonpayable",
           type: "function",
         },
         {
-          inputs: [],
-          name: "getCount",
+          inputs: [
+            {
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "hasChosen",
           outputs: [
             {
-              internalType: "euint32",
+              internalType: "bool",
               name: "",
-              type: "bytes32",
+              type: "bool",
             },
           ],
           stateMutability: "view",
@@ -53,7 +59,7 @@ const deployedContracts = {
               type: "bytes",
             },
           ],
-          name: "increment",
+          name: "makeChoice",
           outputs: [],
           stateMutability: "nonpayable",
           type: "function",
@@ -69,6 +75,38 @@ const deployedContracts = {
             },
           ],
           stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "viewMyChoice",
+          outputs: [
+            {
+              internalType: "euint32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "viewUserChoice",
+          outputs: [
+            {
+              internalType: "euint32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
           type: "function",
         },
       ],
