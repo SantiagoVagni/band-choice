@@ -1,19 +1,50 @@
-# FHEVM React Template
+# 🎵 FHE BandChoice Awards
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+> A privacy-preserving decentralized app (dApp) built with **FHEVM** that lets users **securely and anonymously vote for their favorite music band** using fully homomorphic encryption.
 
-## 🚀 What is FHEVM?
+---
 
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+## 🧠 What is FHEVM?
 
-## ✨ Features
+**FHEVM (Fully Homomorphic Encryption Virtual Machine)** enables performing computations directly on encrypted data on Ethereum.  
+This means your votes, predictions, and choices remain **completely private** — even to smart contracts — while still allowing aggregate results to be computed and verified.
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+The **FHE BandChoice Awards** project demonstrates how to:
+- Use **Fully Homomorphic Encryption (FHE)** in Ethereum smart contracts  
+- Build a **React frontend** that interacts with FHE-enabled contracts  
+- Provide **on-chain privacy** for user choices or votes
+
+---
+
+## 🪩 Project Overview
+
+The **FHE BandChoice Awards** allows users to:
+1. Choose their favorite band from a list (e.g., BTS, BLACKPINK, Stray Kids, etc.)
+2. Encrypt their choice locally using FHEVM SDK
+3. Submit it to the blockchain where it's stored as **encrypted data**
+4. Optionally update their choice before results are revealed
+
+All votes remain hidden — the contract never sees any plaintext band ID.
+
+---
+
+## 🧱 Smart Contract
+
+### 📜 `FHEBandChoice.sol`
+
+- **Functions**
+  - `makeChoice()` — submit your encrypted vote (first time only)
+  - `changeChoice()` — update your encrypted vote
+  - `viewMyChoice()` — view your encrypted vote
+  - `viewUserChoice(address)` — view someone’s encrypted vote
+  - `hasChosen(address)` — check if a user has voted
+
+- **Security & Privacy**
+  - Encrypted using FHE (`euint32`)
+  - Only users can decrypt their own votes locally
+  - No plaintext data ever stored or revealed on-chain
+
+---
 
 ## 📋 Prerequinextjss
 
@@ -124,7 +155,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 This template uses a monorepo structure with three main packages:
 
 ```
-fhevm-react-template/
+band-choice/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +165,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks`)
+- **`useFHEBandChoiceWagmi.ts`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
