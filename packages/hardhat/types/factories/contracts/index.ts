@@ -2,4 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export { FHEBandChoice__factory } from "./FHEBandChoice__factory";
-export { FHECounter__factory } from "./FHECounter__factory";

@@ -79,7 +79,7 @@ export class RelayerSDKLoader {
 
       console.log("[RelayerSDKLoader] add script to DOM...");
       document.head.appendChild(script);
-      console.log("[RelayerSDKLoader] script added!")
+      console.log("[RelayerSDKLoader] script added!!")
     });
   }
 }

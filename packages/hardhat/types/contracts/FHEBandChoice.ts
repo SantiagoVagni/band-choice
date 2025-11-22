@@ -24,9 +24,9 @@ export interface FHEBandChoiceInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "changeChoice"
+      | "confidentialProtocolId"
       | "hasChosen"
       | "makeChoice"
-      | "protocolId"
       | "viewMyChoice"
       | "viewUserChoice"
   ): FunctionFragment;
@@ -36,16 +36,16 @@ export interface FHEBandChoiceInterface extends Interface {
     values: [BytesLike, BytesLike]
   ): string;
   encodeFunctionData(
+    functionFragment: "confidentialProtocolId",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "hasChosen",
     values: [AddressLike]
   ): string;
   encodeFunctionData(
     functionFragment: "makeChoice",
     values: [BytesLike, BytesLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "protocolId",
-    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "viewMyChoice",
@@ -60,9 +60,12 @@ export interface FHEBandChoiceInterface extends Interface {
     functionFragment: "changeChoice",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "confidentialProtocolId",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "hasChosen", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "makeChoice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "protocolId", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "viewMyChoice",
     data: BytesLike
@@ -122,6 +125,8 @@ export interface FHEBandChoice extends BaseContract {
     "nonpayable"
   >;
 
+  confidentialProtocolId: TypedContractMethod<[], [bigint], "view">;
+
   hasChosen: TypedContractMethod<[user: AddressLike], [boolean], "view">;
 
   makeChoice: TypedContractMethod<
@@ -129,8 +134,6 @@ export interface FHEBandChoice extends BaseContract {
     [void],
     "nonpayable"
   >;
-
-  protocolId: TypedContractMethod<[], [bigint], "view">;
 
   viewMyChoice: TypedContractMethod<[], [string], "view">;
 
@@ -148,6 +151,9 @@ export interface FHEBandChoice extends BaseContract {
     "nonpayable"
   >;
   getFunction(
+    nameOrSignature: "confidentialProtocolId"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "hasChosen"
   ): TypedContractMethod<[user: AddressLike], [boolean], "view">;
   getFunction(
@@ -157,9 +163,6 @@ export interface FHEBandChoice extends BaseContract {
     [void],
     "nonpayable"
   >;
-  getFunction(
-    nameOrSignature: "protocolId"
-  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "viewMyChoice"
   ): TypedContractMethod<[], [string], "view">;

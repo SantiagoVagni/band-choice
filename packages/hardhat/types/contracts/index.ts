@@ -2,4 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { FHEBandChoice } from "./FHEBandChoice";
-export type { FHECounter } from "./FHECounter";

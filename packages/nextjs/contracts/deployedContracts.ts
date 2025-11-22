@@ -7,108 +7,113 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 const deployedContracts = {
   11155111: {
     FHEBandChoice: {
-      address: "0xCdf1cAf2B63e22b597e126fE7CdBdF00a18928a0",
+      address: "0x49394ace9d3dDd2729a1926bFd712641e1163EAf",
       abi: [
         {
-          inputs: [
-            {
-              internalType: "externalEuint32",
-              name: "inputEuint32",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "inputProof",
-              type: "bytes",
-            },
-          ],
-          name: "changeChoice",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
+          "inputs": [],
+          "name": "ZamaProtocolUnsupported",
+          "type": "error"
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "address",
-              name: "user",
-              type: "address",
+              "internalType": "externalEuint32",
+              "name": "inputEuint32",
+              "type": "bytes32"
             },
-          ],
-          name: "hasChosen",
-          outputs: [
             {
-              internalType: "bool",
-              name: "",
-              type: "bool",
-            },
+              "internalType": "bytes",
+              "name": "inputProof",
+              "type": "bytes"
+            }
           ],
-          stateMutability: "view",
-          type: "function",
+          "name": "changeChoice",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-          inputs: [
+          "inputs": [],
+          "name": "confidentialProtocolId",
+          "outputs": [
             {
-              internalType: "externalEuint32",
-              name: "inputEuint32",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "inputProof",
-              type: "bytes",
-            },
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
           ],
-          name: "makeChoice",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          inputs: [],
-          name: "protocolId",
-          outputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
+          "name": "hasChosen",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          inputs: [],
-          name: "viewMyChoice",
-          outputs: [
+          "inputs": [
             {
-              internalType: "euint32",
-              name: "",
-              type: "bytes32",
+              "internalType": "externalEuint32",
+              "name": "inputEuint32",
+              "type": "bytes32"
             },
+            {
+              "internalType": "bytes",
+              "name": "inputProof",
+              "type": "bytes"
+            }
           ],
-          stateMutability: "view",
-          type: "function",
+          "name": "makeChoice",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-          inputs: [
+          "inputs": [],
+          "name": "viewMyChoice",
+          "outputs": [
             {
-              internalType: "address",
-              name: "user",
-              type: "address",
-            },
+              "internalType": "euint32",
+              "name": "",
+              "type": "bytes32"
+            }
           ],
-          name: "viewUserChoice",
-          outputs: [
-            {
-              internalType: "euint32",
-              name: "",
-              type: "bytes32",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
+          "stateMutability": "view",
+          "type": "function"
         },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "name": "viewUserChoice",
+          "outputs": [
+            {
+              "internalType": "euint32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
       ],
       inheritedFunctions: {},
       deployedOnBlock: 9368216,

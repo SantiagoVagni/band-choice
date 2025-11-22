@@ -2,11 +2,11 @@
 pragma solidity ^0.8.24;
 
 import {FHE, euint32, externalEuint32} from "@fhevm/solidity/lib/FHE.sol";
-import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
+import { ZamaEthereumConfig } from "@fhevm/solidity/config/ZamaConfig.sol";
 
 /// @title FHEBandChoice - Encrypted Favorite Band Selector
 /// @notice Users can privately choose the music band they love the most using Fully Homomorphic Encryption.
-contract FHEBandChoice is SepoliaConfig {
+contract FHEBandChoice is ZamaEthereumConfig {
     mapping(address => euint32) private _encryptedChoices;
     mapping(address => bool) private _hasChosen;
 

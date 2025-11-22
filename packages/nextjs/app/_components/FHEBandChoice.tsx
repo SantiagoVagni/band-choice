@@ -91,15 +91,18 @@ export const FHEBandChoice = () => {
               ))}
             </div>
 
-            <div className="text-center mt-10">
-              <button
-                onClick={() => bandChoice.decryptMyChoice()}
-                disabled={bandChoice.isDecrypting}
-                className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-400 hover:to-violet-400 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition-transform"
-              >
-                {bandChoice.isDecrypting ? "⏳ Decrypting..." : "🔓 Decrypt My Choice"}
-              </button>
-            </div>
+            {bandChoice.canDecrypt && (
+              <div className="text-center mt-10">
+                <button
+                  onClick={() => bandChoice.decryptMyChoice()}
+                  disabled={bandChoice.isDecrypting}
+                  className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-400 hover:to-violet-400 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition-transform"
+                >
+                  {bandChoice.isDecrypting ? "⏳ Decrypting..." : "🔓 Decrypt My Choice"}
+                </button>
+              </div>
+            )}
+
           </>
         )}
       </div>
